@@ -1,9 +1,9 @@
 data(clr)
 test_that("plotmSlineCV output is a list for plotting a ggplot object", {
-  expect_type(plotmSlinesCV(pairedTimes(data = clr, sequential = TRUE, common = "_0_")$t1_t25,
+  expect_s3_class(plotmSlinesCV(pairedTimes(data = clr, sequential = TRUE, common = "_0_")$t1_t25,
                         iterativeClusteringCV(pairedTimes = pairedTimes(data = clr, sequential = TRUE, common = "_0_"),
                                               results = iterativeClustering(pairedTimes = pairedTimes(data = clr, sequential = TRUE, common = "_0_"),
                                                                             common = "_"), name = "t1_t25",
                                               common = "_", k = 2L),
-                        k = 2L), "list")
+                        k = 2L), "ggplot")
 })
